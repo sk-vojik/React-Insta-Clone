@@ -1,6 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types";
-
+import PropTypes from "prop-types"
 
 
 function InstaComment(props) {
@@ -13,7 +12,7 @@ function InstaComment(props) {
 
 InstaComment.propTypes = {
   username: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.string
 }
 
 

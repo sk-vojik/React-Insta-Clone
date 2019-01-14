@@ -6,7 +6,7 @@ function CommentContainer(props) {
     <div className="comment-container">
       {props.instaPost.comments.map(comment => {
         return (
-          <div>
+          <div className="comment-line">
             <InstaComment comment={comment} />
           </div>
         )

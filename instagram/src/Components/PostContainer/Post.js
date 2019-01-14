@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 function Post (props) {
   return (
@@ -19,6 +20,11 @@ function Post (props) {
     
     </div>
   )
+}
+
+Post.propTypes = {
+  thumbnailUrl: PropTypes.string,
+  username: PropTypes.string
 }
 
 export default Post
