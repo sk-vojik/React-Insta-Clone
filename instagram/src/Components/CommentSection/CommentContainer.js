@@ -2,6 +2,7 @@ import React from "react"
 import InstaComment from "./InstaComment"
 
 function CommentContainer(props) {
+  console.log(props);
   return (
     <div className="comment-container">
       {props.instaPost.comments.map(comment => {
