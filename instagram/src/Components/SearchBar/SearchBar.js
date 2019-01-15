@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function SearchBar() {
+function SearchBar(props) {
   return (
     <div className="search-container">
 
@@ -11,8 +11,8 @@ function SearchBar() {
         <img className="insta-logo" src={require("./instaLogo.png")} alt="nope"/>
       </div>
       
-      <form>
-        <input type="text" placeholder="Search" />
+      <form onSubmit={props.search}>
+        <input name="searchText" onChange={props.handleSearch} type="text" placeholder="Search" />
       </form>
 
       <div className="icon-container">

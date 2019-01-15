@@ -14,6 +14,8 @@ class App extends Component {
     super();
     this.state = {
       dataList: [],
+      searchText: '',
+      searchPosts: []
     };
   }
 
@@ -21,13 +23,28 @@ class App extends Component {
     this.setState({ dataList: dummyData });
   }
 
+  handleSearch = ev => {
+    this.setState({
+      searchText: ev.target.value
+    });
+  };
+
+  searchUsers = ev => {
+    ev.preventDefault();
+    const searched = this.state.dataList.filter((search) => {
+      return search.username.includes(this.state.searchText);
+    });
+    console.log(searched);
+    this.setState({searchPosts: searched});
+  }
+
 
 
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <PostContainer instaDataList={this.state.dataList}/>
+        <SearchBar search={this.searchUsers} handleSearch={this.handleSearch}/>
+        <PostContainer instaDataList={this.state.searchPosts.length > 0 ? this.state.searchPosts : this.state.dataList}/>
       </div>
     );
   }
