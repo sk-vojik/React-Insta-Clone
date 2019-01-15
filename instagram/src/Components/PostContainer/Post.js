@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
+import CommentContainer from "../CommentSection/CommentContainer";
 
 function Post (props) {
   return (
-    <div className="post-container">
+    <React.Fragment>
 
       <div className="post-header">
         <img src={props.instaPost.thumbnailUrl} alt=""/>
@@ -17,8 +18,9 @@ function Post (props) {
       </div>
       <p className="likes">{props.instaPost.likes} likes</p>
 
-    
-    </div>
+      <CommentContainer comments={props.instaPost.comments}/>
+
+    </React.Fragment>
   )
 }
 

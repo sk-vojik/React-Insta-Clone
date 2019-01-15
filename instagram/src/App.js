@@ -13,9 +13,16 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      dataList: dummyData,
-    }
+      dataList: [],
+    };
   }
+
+  componentDidMount() {
+    this.setState({ dataList: dummyData });
+  }
+
+
+
   render() {
     return (
       <div className="App">
