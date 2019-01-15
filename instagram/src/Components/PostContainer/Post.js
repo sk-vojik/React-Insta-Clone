@@ -6,13 +6,18 @@ class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likes: props.instaPost.likes
+      likes: props.instaPost.likes,
+      isLiked: false
     };
   }
 
   incrementLikes = event => {
-    event.preventDefault();
-    this.setState( () => ({likes: this.state.likes + 1}));
+    event.preventDefault(); 
+    if (this.state.isLiked === false) {
+      this.setState({likes: this.state.likes + 1, isLiked: true});
+    } else {
+      this.setState({likes: this.state.likes - 1, isLiked: false});
+    }
   };
 
   render() {
