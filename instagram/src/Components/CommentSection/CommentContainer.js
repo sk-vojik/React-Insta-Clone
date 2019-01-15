@@ -6,7 +6,7 @@ class CommentContainer extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      inputText: ""
+      inputText: "",
     }
   }
 
@@ -27,6 +27,7 @@ class CommentContainer extends React.Component {
       inputText: ""
     });
   }
+
 
   render () {
     return (
