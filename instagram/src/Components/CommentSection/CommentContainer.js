@@ -38,7 +38,7 @@ class CommentContainer extends React.Component {
         })}
       
         <form  onSubmit={this.addNewComment} className="comment-form"> 
-          <input name="inputText" value={this.inputText} onChange={this.commentHandler} className="comment-input" type="text" placeholder="Add a comment..." />
+          <input name="inputText" value={this.state.inputText} onChange={this.commentHandler} className="comment-input" type="text" placeholder="Add a comment..." />
         </form>
       </div>
     )
