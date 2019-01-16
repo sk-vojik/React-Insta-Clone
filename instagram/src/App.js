@@ -31,11 +31,11 @@ class App extends Component {
 
   searchUsers = ev => {
     ev.preventDefault();
-    const searched = this.state.dataList.filter((search) => {
-      return search.username.includes(this.state.searchText);
+    this.setState({
+      searchPosts: this.state.dataList.filter((userSearch) => {
+      return userSearch.username.includes(this.state.searchText);
+      })
     });
-    console.log(searched);
-    this.setState({searchPosts: searched});
   }
 
 
