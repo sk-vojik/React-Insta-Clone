@@ -9,12 +9,14 @@ class PostsPage extends React.Component {
     this.state = {
       dataList: [],
       searchText: '',
-      searchPosts: []
+      searchPosts: [],
+      isLoggedIn: false
     };
   }
 
   componentDidMount() {
     this.setState({ dataList: dummyData });
+    this.setState({ isLoggedIn: true })
   }
 
   handleSearch = ev => {

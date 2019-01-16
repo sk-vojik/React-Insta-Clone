@@ -1,18 +1,30 @@
 import React from 'react';
 import './App.css';
-
-import PostPage from "./Components/PostContainer/PostsPage"
 import './Components/SearchBar/SearchBar.css'
 
+import PostsPage from "./Components/PostContainer/PostsPage"
+import authenticate from './Components/Authentication/authenticate';
+import Login from './Components/Login/Login'
 
-function App () {
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+    }
+  }
+  render() {
+    return (
+      <>
+        <PostsPage />
+      </>
+    )
+  }
   
-  return (
-    <>
-      <PostPage />
-    </>
-  )
   
 }
 
-export default App;
+
+
+
+export default authenticate(App)(Login);
