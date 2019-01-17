@@ -1,27 +1,26 @@
-import React from "react"
-import dummyData from '../dummy-data'
+import React, { Component } from 'react';
+import dummyData from './dummy-data'
 import SearchBar from '../SearchBar/SearchBar'
-import PostContainer from './PostContainer'
+import PostContainer from '../PostContainer/PostContainer'
 
-class PostsPage extends React.Component {
+
+class PostsPage extends Component {
   constructor () {
     super();
     this.state = {
       dataList: [],
       searchText: '',
-      searchPosts: [],
-      isLoggedIn: false
+      searchPosts: []
     };
   }
 
   componentDidMount() {
     this.setState({ dataList: dummyData });
-    this.setState({ isLoggedIn: true })
   }
 
   handleSearch = ev => {
     this.setState({
-      [ev.target.name]: ev.target.value
+      searchText: ev.target.value
     });
   };
 
@@ -34,8 +33,6 @@ class PostsPage extends React.Component {
     });
   }
 
-
-
   render() {
     return (
       <div className="App">
@@ -46,4 +43,4 @@ class PostsPage extends React.Component {
   }
 }
 
-export default PostsPage
+export default PostsPage;

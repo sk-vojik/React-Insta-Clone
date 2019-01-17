@@ -1,41 +1,47 @@
-import React from "react"
+import React from 'react';
 
 class Login extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       username: '',
-      password: '',
-      isLoggedIn: false
-    }
+      password: ''
+    };
   }
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+  handleInputChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleLogin = e => {
-    e.preventDefault();
-    localStorage.setItem(`${this.state.username}`, `${this.state.password}`);
-    this.setState({ isLoggedIn: true });
-  }
-
-  
+    localStorage.setItem(`${this.state.username}`,'user');
+  };
 
   render() {
     return (
-      <div className="login-container">
-        <form>
-          <input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange}/>
-          <input type="text" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange}/>
-          <button onClick={this.handleLogin}>Login</button>
-        </form>
-      </div>
-    )
+      <form autocomplete="off">
+        <input
+          type="text"
+          placeholder="User Name"
+          name="username"
+          value={this.state.username}
+          onChange={this.handleInputChange}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={this.state.password}
+          onChange={this.handleInputChange}
+          required
+        />
+        <button onClick={this.handleLogin}>
+          Log In
+        </button>
+      </form>
+    );
   }
 }
-  
 
-export default Login
+export default Login;
