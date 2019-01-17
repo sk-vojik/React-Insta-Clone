@@ -2,6 +2,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import CommentContainer from "../CommentSection/CommentContainer";
 
+import styled from 'styled-components';
+
+const PostHeader = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 24px 1%;
+`
+
+const UsertThumbnail = styled.img`
+  height: 50px;
+  border-radius: 30px;
+  margin: 0 1%;
+`
+
 class Post extends React.Component {
   constructor(props) {
     super(props);
@@ -24,10 +38,10 @@ class Post extends React.Component {
     return (
       <React.Fragment>
   
-        <div className="post-header">
-          <img src={this.props.instaPost.thumbnailUrl} alt=""/>
+        <PostHeader>
+          <UsertThumbnail src={this.props.instaPost.thumbnailUrl} alt=""/>
           <p>{this.props.instaPost.username}</p>
-        </div>
+        </PostHeader>
         <img className="user-pic" src={this.props.instaPost.imageUrl} alt="user post" />
   
         <div className="post-icon-container">
