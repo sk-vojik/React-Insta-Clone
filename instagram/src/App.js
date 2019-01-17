@@ -10,10 +10,11 @@ function App () {
 
   return (
     <div className="App">
-      <PostsPage />
+      <ConditionalView />
     </div>
   );
-
 }
 
-export default authenticate(App)(Login);
+const ConditionalView = authenticate(PostsPage)(Login);
+
+export default App;

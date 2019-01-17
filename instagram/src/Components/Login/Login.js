@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       username: '',
       password: ''
@@ -19,7 +19,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <form autocomplete="off">
+      <form autoComplete="off">
         <input
           type="text"
           placeholder="User Name"
