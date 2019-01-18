@@ -16,6 +16,28 @@ const UsertThumbnail = styled.img`
   margin: 0 1%;
 `
 
+const PostUsername = styled.p`
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 12px 0 0 2px;
+`
+
+const PostPicture = styled.img`
+  width: 100%;
+  height: 900px;
+`
+
+const PostIconContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`
+
+const Likes = styled.p`
+  font-weight: bold;
+  text-align: left;
+  margin-left: 1.3%;
+`
+
 class Post extends React.Component {
   constructor(props) {
     super(props);
@@ -39,16 +61,16 @@ class Post extends React.Component {
       <React.Fragment>
   
         <PostHeader>
-          <UsertThumbnail src={this.props.instaPost.thumbnailUrl} alt=""/>
+          <UsertThumbnail src={this.props.instaPost.thumbnailUrl} alt="thumbnail"/>
           <p>{this.props.instaPost.username}</p>
         </PostHeader>
-        <img className="user-pic" src={this.props.instaPost.imageUrl} alt="user post" />
+        <PostPicture src={this.props.instaPost.imageUrl} alt="user post" />
   
         <div className="post-icon-container">
           <i className="far fa-heart" onClick={this.incrementLikes}></i>
           <i className="far fa-comment"></i>
         </div>
-        <p className="likes">{this.state.likes} likes</p>
+        <Likes>{this.state.likes} likes</Likes>
   
         <CommentContainer comments={this.props.instaPost.comments}/>
   
